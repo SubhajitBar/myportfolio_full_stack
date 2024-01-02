@@ -1,0 +1,12 @@
+.loadingItem{
+    width: 200px;
+    height: 200px;
+
+}
+.loadingPage{
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    place-items: center;
+    background-color: hsla(250, 100%, 75%, 0.445);
+}

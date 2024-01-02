@@ -1,0 +1,158 @@
+.projects {
+  background-color: hsl(219, 48%, 8%);
+  min-height: 100vh;
+  padding-top: 15vmax;
+}
+
+.projects > h3 {
+  text-align: center;
+  color: white;
+  background-color: hsl(250, 100%, 75%);
+  position: absolute;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  padding: 2vmax 4vmax;
+  border-radius: 100px;
+
+  transform: translate(-50%, -100vh);
+  animation: projectHeadingAnimation 1s ease-in-out forwards;
+}
+
+.projects > h3 > svg {
+  margin: 1vmax;
+}
+
+.projectsWrapper {
+  border-top: 100px solid white;
+  border-radius: 300px 300px 0 0;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5vmax;
+  padding-bottom: 10vmax;
+  min-height: inherit;
+  flex-wrap: wrap;
+  overflow-x: hidden;
+}
+
+.projectCard {
+  width: 80%;
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.712);
+  margin: 2vmax;
+  border-radius: 10px;
+  display: flex;
+  transform: translate(-100vw);
+  animation: projectCardAnimation 1s ease-in-out forwards 0.5s;
+}
+
+.projectCard:nth-child(even) {
+  flex-direction: row-reverse;
+  transform: translate(100vw);
+  animation: projectCardAnimation 1s ease-in-out forwards 1s;
+}
+
+@keyframes projectCardAnimation {
+  to {
+    transform: translate(0);
+  }
+}
+
+@keyframes projectHeadingAnimation {
+  to {
+    transform: translate(-50%, -50%);
+  }
+}
+
+.projectCard > div > img {
+  width: inherit;
+  transition: all 0.4s;
+}
+
+.projectCard > div {
+  width: 100%;
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  transition: all 0.5s;
+}
+
+.projectCard > div:first-child::after {
+  content: "View Demo";
+  width: 100%;
+  height: 100%;
+  font: 100 2rem "Roboto";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: hsl(250, 100%, 75%);
+}
+
+.projectCard > div:first-child > h5 {
+  text-align: center;
+  padding: 2vmax;
+  letter-spacing: 5px;
+  word-spacing: 3px;
+}
+
+.projectCard > div:last-child {
+  padding: 3vmax;
+}
+
+.projectCard > div:last-child > h4 {
+  text-align: center;
+  letter-spacing: 5px;
+  word-spacing: 3px;
+}
+
+.projectCard > div:last-child > p {
+  text-align: right;
+  letter-spacing: 5px;
+  word-spacing: 5px;
+}
+.projectCard > div:last-child > h6 {
+  font-family: "Ubuntu Mono";
+  font-weight: bold;
+  color: black;
+}
+
+.projectCard:hover > div > img {
+  filter: blur(4px);
+}
+
+@media screen and (max-width: 600px) {
+  .projectCard {
+    flex-direction: column;
+  }
+  .projectCard:nth-child(even) {
+    flex-direction: column;
+  }
+  .projectCard > div {
+    justify-content: center;
+  }
+  .projectCard > div:last-child > p {
+    text-align: center;
+    margin: 1vmax 0;
+  }
+  .projectCard > div:last-child > h4 {
+    margin: 2vmax 0;
+  }
+
+}
+@media screen and (max-width: 400px) {
+
+  .projects > h3 {
+    position: relative;
+    left: 44%;
+    top: 5rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin: 0 3vmax;
+  }
+}
